@@ -22,6 +22,11 @@ CREATE TABLE player (
 SHOW TABLES;
 INSERT INTO team(team_name, mascot)
     VALUES('Team Gandalf', 'White Wizard');
-DROP TABLE IF EXISTS player;
+INSERT INTO player(first_name, last_name, team_id)
+    VALUES('Thorin', 'Oakenshield', 1);
+
 SELECT team_id FROM team WHERE team_name= 'Team Sauron';
 SHOW TABLES;
+
+use pysports;
+UPDATE team SET mascot = 'Orcs' WHERE team_id = '2'

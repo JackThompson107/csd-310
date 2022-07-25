@@ -19,3 +19,13 @@ doc2 = db.students.find_one(    {
  
 print(doc2["student_id"])
 print(doc2["last_name"])
+
+result = db.collection.update_one(    {
+        "student_id": "1007",
+        "first_name": "Thorin",
+        "last_name": "Oakenshield"
+    }, {"$set": {"last_name": "Smith"}})
+
+updated_id = db.students.find_one(    { 
+        "student_id": "1007"
+    })
